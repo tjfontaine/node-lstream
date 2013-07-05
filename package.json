@@ -1,0 +1,22 @@
+{
+  "name": "lstream",
+  "version": "0.0.1",
+  "author": "Timothy J Fontaine <tjfontaine@gmail.com> (http://atxconsulting.com)",
+  "description": "stream comes in, string per line comes out",
+  "keywords": [ "line", "stream", "transform" ],
+  "homepage": "http://github.com/tjfontaine/node-lstream",
+  "bugs": {
+    "url": "http://github.com/tjfontaine/node-lstream/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/tjfontaine/node-lstream.git"
+  },
+  "main": "linestream.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "readable-stream": ">= 1.0.2"
+  }
+}
