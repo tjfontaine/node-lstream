@@ -1,6 +1,6 @@
 {
   "name": "lstream",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Timothy J Fontaine <tjfontaine@gmail.com> (http://atxconsulting.com)",
   "description": "stream comes in, string per line comes out",
   "keywords": [ "line", "stream", "transform" ],

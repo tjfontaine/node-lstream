@@ -46,7 +46,7 @@ LineStream.prototype._transform = function(chunk, encoding, done) {
   var self = this;
 
   lines.forEach(function (line) {
-    self.push(line);
+    self._line(line);
   });
 
   done();
@@ -54,6 +54,12 @@ LineStream.prototype._transform = function(chunk, encoding, done) {
 
 
 LineStream.prototype._flush = function(done) {
-  if (this._buff) this.push(this._buff);
+  if (this._buff) this._line(this._buff);
   done();
+};
+
+
+LineStream.prototype._line = function(line) {
+  this.push(line);
+  this.emit('line', line);
 };
