@@ -19,9 +19,6 @@
   "scripts": {
     "test": "./node_modules/.bin/lab -r threshold -t 100"
   },
-  "dependencies": {
-    "readable-stream": ">= 1.0.2"
-  },
   "devDependencies": {
       "lab": "1.2.x"
   }
