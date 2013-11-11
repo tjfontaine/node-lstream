@@ -1,8 +1,8 @@
 {
   "name": "lstream",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Timothy J Fontaine <tjfontaine@gmail.com> (http://atxconsulting.com)",
-  "description": "stream comes in, string per line comes out",
+  "description": "stream comes in, string per line goes out",
   "keywords": [ "line", "stream", "transform" ],
   "homepage": "http://github.com/tjfontaine/node-lstream",
   "bugs": {
@@ -16,7 +16,13 @@
   "engines": {
     "node": ">= 0.10.0"
   },
+  "scripts": {
+    "test": "./node_modules/.bin/lab -r threshold -t 100"
+  },
   "dependencies": {
     "readable-stream": ">= 1.0.2"
+  },
+  "devDependencies": {
+      "lab": "1.2.x"
   }
 }

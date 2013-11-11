@@ -21,9 +21,6 @@
 var stream = require('stream');
 var util = require('util');
 
-if (!stream.Transform)
-  stream = require('readable-stream');
-
 var LineStream = module.exports = function LineStream(opts) {
   if (!(this instanceof LineStream)) return new LineStream(opts);
   opts = opts || {};
@@ -43,11 +40,10 @@ LineStream.prototype._transform = function(chunk, encoding, done) {
   else
     this._buff = '';
 
-  var self = this;
 
-  lines.forEach(function (line) {
-    self._line(line);
-  });
+  for (var i = 0, il = lines.length; i < il; ++i) {
+      this._line(lines[i]);
+  }
 
   done();
 };
