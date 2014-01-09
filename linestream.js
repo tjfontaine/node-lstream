@@ -38,10 +38,7 @@ LineStream.prototype._transform = function(chunk, encoding, done) {
   var data = this._buff + chunk.toString('utf8');
   var lines = data.split(/\r?\n|\r(?!\n)/);
 
-  if (!data.match(/(\r?\n|\r(?!\n))$/))
-    this._buff = lines.pop();
-  else
-    this._buff = '';
+  this._buff = lines.pop();
 
   var self = this;
 
