@@ -1,10 +1,39 @@
 # lstream
 
-This is a very thin Transform for streams2
+This is a very thin Transform for streams2.
 
-you `.pipe(new lstream()).pipe(someOtherConsumable)` and that consumable only
-gets the results on a per line basis
+LICENSE: **MIT**
 
-still very young
+## Usage
 
-LICENSE MIT
+### Reading a file
+
+```javascript
+fs.createReadStream("linestream.js").pipe(new LineStream()).resume().on("line", function(line) {
+    console.log("line:", line);
+});
+```
+
+### Echoing stdin
+
+```javascript
+process.stdin.pipe(new LineStream()).on("line", function(line) {
+    console.log("->", line);
+});
+```
+
+###
+
+## Events
+
+### `line`
+Emitted when a line is buffered. Callback is passed a string.
+
+```javascript
+lineStream.on("line", function(line) {
+    console.log("got line", line);
+});
+```
+
+### `data`
+Equivalent to `.on("line", function(line) {...})`.
