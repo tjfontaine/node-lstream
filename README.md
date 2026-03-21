@@ -1,3 +1,5 @@
+> **⚠️ This project is archived and no longer maintained.**
+
 # lstream
 
 This is a very thin Transform for streams2
