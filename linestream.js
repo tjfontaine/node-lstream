@@ -43,7 +43,10 @@ LineStream.prototype._transform = function(chunk, encoding, done) {
   var self = this;
 
   lines.forEach(function (line) {
-    self._line(line);
+    // Note this may be empty as "lines" might be:
+    // ['foo', '']
+    if (line)
+      self._line(line);
   });
 
   done();
